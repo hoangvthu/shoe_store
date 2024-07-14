@@ -54,7 +54,7 @@
                                                         <p class="text-danger">{{$message}}</p>
                                                     @enderror
                                                 </div>
-                                                
+
                                             </div>
                                         </div>
                                         <div class="modal-footer clearfix">
@@ -62,7 +62,7 @@
                                                 <button type="submit" class="btn btn-primary btn-lg">Login to Dashboard</button>
                                             </div>
                                         </div>
-                                        
+
                                     </form>
                                 </div>
                             </div>

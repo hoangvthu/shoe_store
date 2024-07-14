@@ -45,7 +45,7 @@
                     <div class="cardName">Orders</div>
                 </div>
                 <div class="iconBx">
-                    <ion-icon name="document-text-outline" role="img" class="md hydrated" aria-label="document text outline"></ion-icon>   
+                    <ion-icon name="document-text-outline" role="img" class="md hydrated" aria-label="document text outline"></ion-icon>
                 </div>
             </div>
             <div class="card">
@@ -113,7 +113,7 @@
                 }
             });
         };
-        
+
         //Pie Chart
         const pieChartData = <?php echo json_encode($pieChartData) ?>;
         const status = Object.keys(pieChartData);
@@ -140,7 +140,7 @@
         });
 
     </script>
-    
+
     @endpush
 
 @endsection

@@ -16,7 +16,7 @@
 
 
     <!-- Cart Start -->
-    
+
     <div class="container-fluid pt-5">
         @if (session('success'))
             <div class="alert alert-success">
@@ -39,7 +39,7 @@
                         </tr>
                     </thead>
                     <tbody class="align-middle">
-                        
+
                         @foreach (session('cart') as $carts )
                                @foreach ($carts as $cart)
                                <tr>
@@ -52,7 +52,7 @@
                                         <div class="input-group quantity mx-auto" style="width: 100px;">
                                             <div class="input-group-btn">
                                                 <form action="{{route('cart.decrease', [$cart['product_id'], $cart['size']])}}" method="GET">
-                                                    <button type="submit" class="btn btn-sm btn-primary btn-minus" >
+                                                    <button type="submit" class="btn btn-sm btn-primary btn-minus"  {{ $cart['quantity'] <= 1 ? 'disabled' : '' }} >
                                                         <i class="fa fa-minus"></i>
                                                     </button>
                                                 </form>
@@ -63,12 +63,12 @@
                                                     <button type="submit" class="btn btn-sm btn-primary btn-plus">
                                                         <i class="fa fa-plus"></i>
                                                     </button>
-                                                </form>    
+                                                </form>
                                             </div>
                                         </div>
                                     </td>
                                     <td class="align-middle">{{number_format($cart['quantity'] * $cart['price'])}}đ</td>
-                                    
+
                                     <td class="align-middle">
                                         <form method="POST" action="{{route('cart.delete', [$cart['product_id'], $cart['size']])}}">
                                             @method('DELETE')
@@ -78,13 +78,13 @@
                                             </button>
                                         </form>
                                     </td>
-                                </tr> 
+                                </tr>
                                @endforeach
                         @endforeach
-                                             
+
                     </tbody>
                 </table>
-                
+
             </div>
             <div class="col-lg-4">
                 <div class="card border-secondary mb-5">
@@ -116,7 +116,7 @@
             <div class="row justify-content-center">
                 <a href="{{route('shop')}}" class="btn btn-primary my-4">Continue shopping</a>
             </div>
-        @endif 
+        @endif
     </div>
     <!-- Cart End -->
 
